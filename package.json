@@ -1,5 +1,5 @@
 {
-  "name": "angular-quickstart",
+  "name": "cayzen",
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
@@ -21,7 +21,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jay kamdar",
   "license": "MIT",
   "dependencies": {
     "@agm/core": "^1.0.0-beta.2",
@@ -57,5 +57,6 @@
     "@types/node": "^6.0.46",
     "@types/jasmine": "2.5.36"
   },
-  "repository": {}
+  "repository": {},
+  "main": "karma-test-shim.js"
 }
