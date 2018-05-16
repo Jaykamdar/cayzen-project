@@ -43,10 +43,25 @@
 			    <tbody>
 			        <tr *ngFor="let data of measurements">
 			            <td (click)="cityLocation(data.city, data.measurements.value)">{{data.city}}</td>
+						
 			            <td><table class="table table-hover">
 						  	<tbody>
 						        <tr *ngFor="let d of data.measurements">
-						        	<td>{{d.parameter}} {{ d.value }} {{ d.unit }}</td>
+						        	<td *ngIf="d.parameter == 'o3'" >{{d.parameter}} {{ d.value }} {{ d.unit }}
+										<div  class="measurements">
+											<p *ngIf="d.value < 50" class="aqi_good"></p>
+								
+											<p *ngIf="(d.value < 100 && d.value > 50)" class="aqi_satisfactory"></p>
+											
+											<p *ngIf="(d.value < 168 && d.value > 100)" class="aqi_moderately"></p>
+											
+											<p *ngIf="(d.value < 208 && d.value > 168)" class="aqi_poor"></p>
+											
+											<p *ngIf="(d.value < 748 && d.value > 208)" class="aqi_veryoor"></p>
+											
+											<p *ngIf="(d.value > 748)" class="aqi_sever"></p>
+									</div> 
+									</td>
 								</tr>
 							   </tbody>
 							</table> 
